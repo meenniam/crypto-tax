@@ -18,6 +18,7 @@ try {
   for (const item of mappedData) {
     const coinType = item[1];
     if (item[0] === "S") {
+      buyArr[coinType] = buyArr[coinType].filter(f => f[3] > 0);
       let sellItem = item;
       const amount = buyArr[coinType].reduce((r, d) => (r += d[3]), 0);
       let sellAmount = sellItem[3];
